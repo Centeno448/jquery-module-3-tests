@@ -5,3 +5,9 @@ $('#button').click(function () {
   $('ol').append('<li>' + toAdd + '</li>');
   $('input').val('');
 });
+
+$('input[name=itemCompras]').keyup(function (event) {
+  if (event.keyCode == 13) {
+    $('#button').click();
+  }
+});

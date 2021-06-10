@@ -39,3 +39,15 @@ it('index.js limpia el valor del input al hacer click | Asegúrate de que al pre
 
   expect($('input[type="text"]').val()).toBe('');
 });
+
+it('index.js al presionar la tecla enter se genera el evento click del div id="button" | Asegúrate de que al presionar la tecla enter se genera el evento click del div id="button"', () => {
+  $('input[type="text"]').val('124asd213');
+
+  let e = $.Event('keyup');
+  e.keyCode = 13;
+  $('input[type="text"]').trigger(e);
+
+  expect($('li:last-child').text()).toBe('124asd213');
+
+  expect($('input[type="text"]').val()).toBe('');
+});
